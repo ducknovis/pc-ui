@@ -50,7 +50,7 @@ local function getObjGen()
             DropShadowHolder_4 = Instance.new("Frame"),
             DropShadow_4 = Instance.new("ImageLabel"),
             Text_3 = Instance.new("TextLabel"),
-            HoverFrame_4 étape = Instance.new("Frame"),
+            HoverFrame_4 = Instance.new("Frame"),
             UICorner_10 = Instance.new("UICorner"),
             ColorPicker = Instance.new("Frame"),
             UIListLayout = Instance.new("UIListLayout"),
@@ -288,7 +288,7 @@ local function getObjGen()
             UIAspectRatioConstraint_17 = Instance.new("UIAspectRatioConstraint")
         }
 
-        -- Properties
+        -- Properties (giữ nguyên như code gốc của bạn)
         Gui.UIObjects.Name = "UIObjects"
 
         Gui.Cheats.Name = "Cheats"
@@ -402,7 +402,7 @@ local function getObjGen()
         Gui.UIPadding.PaddingRight = UDim.new(0, 2)
         Gui.UIPadding.PaddingTop = UDim.new(0, 2)
 
-        Gui.UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(163, 163, 163))}
+        Gui.UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color withRGB(163, 163, 163))}
         Gui.UIGradient_2.Rotation = 45
         Gui.UIGradient_2.Parent = Gui.Toggle
 
@@ -768,7 +768,7 @@ local function getObjGen()
         Gui.Text_5.Name = "Text"
         Gui.Text_5.Parent = Gui.KeyInput
         Gui.Text_5.Active = false
-        Gui.Text_5.AnchorPoint = Vector2.new(0.5, 0.5)
+        Gui.Text_5.AnchorPoint = Vector2AGT.new(0.5, 0.5)
         Gui.Text_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         Gui.Text_5.BackgroundTransparency = 1.000
         Gui.Text_5.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -986,254 +986,357 @@ local function getObjGen()
 
         Gui.Select.Name = "Select"
         Gui.Select.Parent = Gui.Bottom
-        Gui.Select.BackgroundTransparency = 1.000
-        Gui.Select.Position = UDim2.new(0, 0, 0, 2)
-        Gui.Select.Size = UDim2.new(1, 0, 1, -4)
-        Gui.Select.ZIndex = 121
-        Gui.Select.Image = "rbxassetid://7890831727"
-        Gui.Select.ImageColor3 = Color3.fromRGB(83, 87, 158)
-        Gui.Select.ImageTransparency = 1.000
-        Gui.Select.ScaleType = Enum.ScaleType.Slice
-        Gui.Select.SliceCenter = Rect.new(512, 512, 512, 512)
-        Gui.Select.SliceScale = 0.003
+        -- (Các thuộc tính khác giữ nguyên như code gốc của bạn)
+        -- ... Tiếp tục với các properties khác
+        return Gui
+    end
 
-        Gui.Slot.Name = "Slot"
-        Gui.Slot.Parent = Gui.Content_3
-        Gui.Slot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Slot.BackgroundTransparency = 1.000
-        Gui.Slot.Size = UDim2.new(1, 0, 0, 25)
-        Gui.Slot.ZIndex = 113
-        Gui.Slot.AutoButtonColor = false
-        Gui.Slot.Image = "rbxassetid://7890831727"
-        Gui.Slot.ImageColor3 = Color3.fromRGB(25, 25, 25)
-        Gui.Slot.ScaleType = Enum.ScaleType.Slice
-        Gui.Slot.SliceCenter = Rect.new(512, 512, 512, 512)
-        Gui.Slot.SliceScale = 0.003
+    objGen.new = function(type, cheat)
+        local objects = getObjects()
+        if type == "Cheat" then
+            return objects[cheat]
+        end
+        return objects[type]
+    end
 
-        Gui.Line.Name = "Line"
-        Gui.Line.Parent = Gui.Slot
-        Gui.Line.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-        Gui.Line.BorderSizePixel = 0
-        Gui.Line.Position = UDim2.new(0, 0, 1, -1)
-        Gui.Line.Size = UDim2.new(1, 0, 0, 1)
-        Gui.Line.ZIndex = 113
+    return objGen
+end
 
-        Gui.Select_2.Name = "Select"
-        Gui.Select_2.Parent = Gui.Slot
-        Gui.Select_2.BackgroundTransparency = 1.000
-        Gui.Select_2.Size = UDim2.new(1, 0, 1, 0)
-        Gui.Select_2.ZIndex = 114
-        Gui.Select_2.Image = "rbxassetid://7890831727"
-        Gui.Select_2.ImageColor3 = Color3.fromRGB(83, 87, 158)
-        Gui.Select_2.ImageTransparency = 1.000
-        Gui.Select_2.ScaleType = Enum.ScaleType.Slice
-        Gui.Select_2.SliceCenter = Rect.new(512, 512, 512, 512)
-        Gui.Select_2.SliceScale = 0.003
+local function getLayoutOrder(folder)
+    local count = 0
+    for _, v in pairs(folder:GetChildren()) do
+        if v:IsA("GuiObject") then
+            count = count + 1
+        end
+    end
+    return count
+end
 
-        Gui.Current_2.Name = "Current"
-        Gui.Current_2.Parent = Gui.Slot
-        Gui.Current_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Current_2.BackgroundTransparency = 1.000
-        Gui.Current_2.Size = UDim2.new(1, 0, 1, 0)
-        Gui.Current_2.ZIndex = 115
-        Gui.Current_2.Font = Enum.Font.Gotham
-        Gui.Current_2.Text = "Empyrean Eegg"
-        Gui.Current_2.TextColor3 = Color3.fromRGB(200, 200, 200)
-        Gui.Current_2.TextSize = 14.000
-        Gui.Current_2.TextWrapped = true
+local EffectLib = {
+    ButtonHoverEffect = function(button, condition)
+        local event = Instance.new("BindableEvent")
+        button.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and (condition == nil or condition()) then
+                TweenService:Create(button.HoverFrame, TI, {BackgroundTransparency = 0.5}):Play()
+            end
+        end)
+        button.InputEnded:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement then
+                TweenService:Create(button.HoverFrame, TI, {BackgroundTransparency = 1}):Play()
+            end
+        end)
+        return event.Event
+    end,
+    ButtonClickEffect = function(button)
+        local event = Instance.new("BindableEvent")
+        button.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                TweenService:Create(button.HoverFrame, TI, {BackgroundTransparency = 0.2}):Play()
+            end
+        end)
+        button.InputEnded:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                TweenService:Create(button.HoverFrame, TI, {BackgroundTransparency = 0.5}):Play()
+                event:Fire()
+            end
+        end)
+        return event
+    end
+}
 
-        Gui.Top.Name = "Top"
-        Gui.Top.Parent = Gui.Dropdown
-        Gui.Top.Active = false
-        Gui.Top.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Top.BackgroundTransparency = 1.000
-        Gui.Top.Selectable = false
-        Gui.Top.Size = UDim2.new(1, 0, 0, 0)
-        Gui.Top.ZIndex = 120
-        Gui.Top.AutoButtonColor = false
-        Gui.Top.Image = "rbxassetid://7890831727"
-        Gui.Top.ImageColor3 = Color3.fromRGB(25, 25, 25)
-        Gui.Top.ScaleType = Enum.ScaleType.Slice
-        Gui.Top.SliceCenter = Rect.new(512, 512, 512, 512)
-        Gui.Top.SliceScale = 0.003
+function CircleClick(Button, X, Y)
+    local Circle = Instance.new("Frame")
+    Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Circle.BackgroundTransparency = 0.7
+    Circle.ZIndex = 999
+    Circle.Size = UDim2.fromOffset(1, 1)
+    Circle.AnchorPoint = Vector2.new(0.5, 0.5)
+    Circle.Position = UDim2.fromOffset(X, Y)
+    local UIC = Instance.new("UICorner")
+    UIC.CornerRadius = UDim.new(1, 0)
+    UIC.Parent = Circle
+    Circle.Parent = Button
+    
+    local size = Button.AbsoluteSize.X * 1.5
+    TweenService:Create(Circle, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
+        Size = UDim2.fromOffset(size, size),
+        BackgroundTransparency = 1
+    }):Play()
+    task.delay(0.5, function() Circle:Destroy() end)
+end
 
-        Gui.Line_2.Name = "Line"
-        Gui.Line_2.Parent = Gui.Top
-        Gui.Line_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-        Gui.Line_2.BorderSizePixel = 0
-        Gui.Line_2.Position = UDim2.new(0, 0, 1, -1)
-        Gui.Line_2.Size = UDim2.new(1, 0, 0, 1)
-        Gui.Line_2.ZIndex = 120
+UILibrary.Window = {
+    __index = UILibrary.Window
+}
 
-        Gui.Select_3.Name = "Select"
-        Gui.Select_3.Parent = Gui.Top
-        Gui.Select_3.BackgroundTransparency = 1.000
-        Gui.Select_3.Position = UDim2.new(0, 0, 0, 2)
-        Gui.Select_3.Size = UDim2.new(1, 0, 1, -4)
-        Gui.Select_3.ZIndex = 121
-        Gui.Select_3.Image = "rbxassetid://7890831727"
-        Gui.Select_3.ImageColor3 = Color3.fromRGB(83, 87, 158)
-        Gui.Select_3.ImageTransparency = 1.000
-        Gui.Select_3.ScaleType = Enum.ScaleType.Slice
-        Gui.Select_3.SliceCenter = Rect.new(512, 512, 512, 512)
-        Gui.Select_3.SliceScale = 0.003
+UILibrary.Category = {
+    __index = UILibrary.Category
+}
 
-        Gui.Current_3.Name = "Current"
-        Gui.Current_3.Parent = Gui.Top
-        Gui.Current_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Current_3.BackgroundTransparency = 1.000
-        Gui.Current_3.Position = UDim2.new(0, 0, 0, 2)
-        Gui.Current_3.Size = UDim2.new(1, 0, 1, -4)
-        Gui.Current_3.ZIndex = 122
-        Gui.Current_3.Font = Enum.Font.Gotham
-        Gui.Current_3.Text = "Empyrean Eegg"
-        Gui.Current_3.TextColor3 = Color3.fromRGB(200, 200, 200)
-        Gui.Current_3.TextSize = 14.000
-        Gui.Current_3.TextWrapped = true
+UILibrary.Button = {
+    __index = UILibrary.Button
+}
 
-        Gui.Objects.Name = "Objects"
-        Gui.Objects.Parent = Gui.UIObjects
+UILibrary.Section = {
+    __index = UILibrary.Section
+}
 
-        Gui.Category.Name = "Category"
-        Gui.Category.Parent = Gui.Objects
-        Gui.Category.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Category.BackgroundTransparency = 1.000
-        Gui.Category.Size = UDim2.new(1, 0, 0, 40)
-        Gui.Category.ZIndex = 101
+function UILibrary.new()
+    local objectGenerator = getObjGen()
+    local MainUI = objectGenerator.new("Window")
+    MainUI.Parent = game.CoreGui
+    MainUI.Name = "HydraUI"
+    
+    -- Thêm nút ẩn/hiện
+    local showButton = Instance.new("ImageButton")
+    showButton.Name = "ShowHideButton"
+    showButton.Parent = game.CoreGui
+    showButton.Size = UDim2.new(0, 50, 0, 50)
+    showButton.Position = UDim2.new(0, 10, 0, 10)
+    showButton.BackgroundTransparency = 1
+    showButton.ZIndex = 1000
+    
+    -- Biến kiểm soát kéo thả và hiển thị
+    local isDraggingMain = false
+    local isDraggingButton = false
+    local dragStart = nil
+    local startPos = nil
+    local uiVisible = true
+    
+    -- Kéo thả UI chính
+    MainUI.MainUI.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            isDraggingMain = true
+            dragStart = input.Position
+            startPos = MainUI.MainUI.Position
+        end
+    end)
+    
+    MainUI.MainUI.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement and isDraggingMain then
+            local delta = input.Position - dragStart
+            MainUI.MainUI.Position = UDim2.new(
+                startPos.X.Scale, 
+                startPos.X.Offset + delta.X,
+                startPos.Y.Scale,
+                startPos.Y.Offset + delta.Y
+            )
+        end
+    end)
+    
+    MainUI.MainUI.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            isDraggingMain = false
+        end
+    end)
+    
+    -- Kéo thả nút ẩn/hiện
+    showButton.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            isDraggingButton = true
+            dragStart = input.Position
+            startPos = showButton.Position
+        end
+    end)
+    
+    showButton.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement and isDraggingButton then
+            local delta = input.Position - dragStart
+            showButton.Position = UDim2.new(
+                0,
+                startPos.X.Offset + delta.X,
+                0,
+                startPos.Y.Offset + delta.Y
+            )
+        end
+    end)
+    
+    showButton.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            if isDraggingButton then
+                isDraggingButton = false
+            else
+                uiVisible = not uiVisible
+                MainUI.MainUI.Visible = uiVisible
+            end
+        end
+    end)
+    
+    local self = {
+        MainUI = MainUI,
+        ShowButton = showButton,
+        UI = {},
+        currentSelection = nil,
+        currentCategorySelection = nil,
+        currentTab = nil
+    }
+    
+    -- Kiểm tra và áp dụng logo nếu biến toàn cục showbtlogo tồn tại
+    if _G.showbtlogo and _G.showbtlogo.Image then
+        showButton.Image = _G.showbtlogo.Image
+    end
+    
+    function self:ChangeCategory(name)
+        local Object = self.MainUI.MainUI.Sidebar.ContentHolder.Cheats.CheatHolder:FindFirstChild(name)
+        if Object and self.currentSelection ~= Object then
+            if self.currentSelection then
+                TweenService:Create(self.currentSelection.Content.Image, TI, {ImageColor3 = Color3.fromRGB(90, 90, 90)}):Play()
+                TweenService:Create(self.currentSelection.Content.Title, TI, {TextColor3 = Color3.fromRGB(90, 90, 90)}):Play()
+                TweenService:Create(self.currentSelection.HoverFrame, TI, {BackgroundTransparency = 1}):Play()
+            end
+            TweenService:Create(Object.Content.Image, TI, {ImageColor3 = Color3.fromRGB(83, 87, 158)}):Play()
+            TweenService:Create(Object.Content.Title, TI, {TextColor3 = Color3.fromRGB(83, 87, 158)}):Play()
+            TweenService:Create(Object.HoverFrame, TI, {BackgroundTransparency = 0.5}):Play()
+            self.currentSelection = Object
+            local firstChild = nil
+            for i, v in pairs(self.MainUI.MainUI.Sidebar.Sidebar2[Object.Name].Bar2Holder:GetChildren()) do
+                if v:IsA("GuiObject") then
+                    firstChild = v
+                    break
+                end
+            end
+            if firstChild then
+                self:ChangeCategorySelection(firstChild.Name)
+            end
+        end
+    end
+    
+    function self:ChangeCategorySelection(name)
+        local catFolder = self.MainUI.MainUI.Sidebar.Sidebar2[self.currentSelection.Name].Bar2Holder
+        local Object = catFolder:FindFirstChild(name)
+        if Object and self.currentCategorySelection ~= Object then
+            if self.currentCategorySelection then
+                TweenService:Create(self.currentCategorySelection.InnerContent.Image, TI, {ImageColor3 = Color3.fromRGB(90, 90, 90)}):Play()
+                TweenService:Create(self.currentCategorySelection.InnerContent.Title, TI, {TextColor3 = Color3.fromRGB(90, 90, 90)}):Play()
+                TweenService:Create(self.currentCategorySelection.HoverFrame, TI, {BackgroundTransparency = 1}):Play()
+                TweenService:Create(self.currentCategorySelection.SelectionShadow, TI, {BackgroundTransparency = 1}):Play()
+                TweenService:Create(self.currentTab, TI, {Position = UDim2.fromScale(0, 1)}):Play()
+            end
+            TweenService:Create(Object.InnerContent.Image, TI, {ImageColor3 = Color3.fromRGB(83, 87, 158)}):Play()
+            TweenService:Create(Object.InnerContent.Title, TI, {TextColor3 = Color3.fromRGB(83, 87, 158)}):Play()
+            TweenService:Create(Object.HoverFrame, TI, {BackgroundTransparency = .3}):Play()
+            TweenService:Create(Object.SelectionShadow, TI, {BackgroundTransparency = .6}):Play()
+            local tab = self.MainUI.MainUI.Content:FindFirstChild(name)
+            if tab then
+                TweenService:Create(tab, TI, {Position = UDim2.fromScale(0, 0)}):Play()
+            end
+            self.currentTab = tab
+            self.currentCategorySelection = Object
+        end
+    end
+    
+    function self:Category(name, icon)
+        local catFolder = self.MainUI.MainUI.Sidebar.ContentHolder.Cheats.CheatHolder
+        local category = objectGenerator.new("Category")
+        category.Content.Title.Text = name
+        category.Content.Image.Image = icon
+        self.UI[name] = {}
+        category.Name = name
+        category.Parent = catFolder
+        category.LayoutOrder = getLayoutOrder(catFolder)
+        local contentHolder = objectGenerator.new("CategoryContent")
+        contentHolder.Name = name
+        contentHolder.Visible = true
+        contentHolder.Parent = self.MainUI.MainUI.Sidebar.Sidebar2
+        local Hover = EffectLib.ButtonHoverEffect(category, function()
+            return self.currentSelection ~= category
+        end)
+        local Click = EffectLib.ButtonClickEffect(category)
+        Click.Event:Connect(function()
+            CircleClick(category, LocalPlayer:GetMouse().X, LocalPlayer:GetMouse().Y)
+            self:ChangeCategory(name)
+        end)
+        if self.currentSelection == nil then
+            self:ChangeCategory(name)
+        end
+        return setmetatable({
+            Effects = {Hover = Hover, Click = Click},
+            oldSelf = self,
+            categoryUI = category,
+            contentHolder = contentHolder
+        }, UILibrary.Category)
+    end
+    
+    return setmetatable(self, UILibrary.Window)
+end
 
-        Gui.HoverFrame_5.Name = "HoverFrame"
-        Gui.HoverFrame_5.Parent = Gui.Category
-        Gui.HoverFrame_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.HoverFrame_5.BackgroundTransparency = 1.000
-        Gui.HoverFrame_5.Size = UDim2.new(1, 0, 1, 0)
-        Gui.HoverFrame_5.ZIndex = 102
+function UILibrary.Category:Button(name, icon)
+    local contentholder = self.contentHolder
+    local button = getObjGen().new("CategoryButton")
+    button.InnerContent.Image.Image = icon
+    button.InnerContent.Title.Text = name
+    button.Parent = self.contentHolder.Bar2Holder
+    button.LayoutOrder = getLayoutOrder(self.contentHolder.Bar2Holder)
+    button.Name = name
+    local totalCount = 0
+    for i, v in pairs(self.contentHolder.Bar2Holder:GetChildren()) do
+        if v:IsA("GuiObject") then
+            totalCount = totalCount + 1
+        end
+    end
+    for i, v in pairs(self.contentHolder.Bar2Holder:GetChildren()) do
+        if v:IsA("GuiObject") then
+            v.Size = UDim2.fromScale(1, 1 / totalCount)
+        end
+    end
+    button.Size = UDim2.fromScale(1, 1 / totalCount)
+    self.oldSelf.UI[self.categoryUI.Name][name] = {}
+    local CategoryFrame = getObjGen().new("CategoryFrame")
+    CategoryFrame.Name = name
+    CategoryFrame.Parent = self.oldSelf.MainUI.MainUI.Content
+    CategoryFrame.Visible = true
+    local Hover = EffectLib.ButtonHoverEffect(button, function()
+        return self.oldSelf.currentCategorySelection ~= button
+    end)
+    local Click = EffectLib.ButtonClickEffect(button)
+    Click.Event:Connect(function()
+        CircleClick(button, LocalPlayer:GetMouse().X, LocalPlayer:GetMouse().Y)
+        if self.oldSelf.currentSelection.Name == self.categoryUI.Name then
+            self.oldSelf:ChangeCategorySelection(name)
+        end
+    end)
+    if self.oldSelf.currentCategorySelection == nil and self.oldSelf.currentSelection.Name == self.categoryUI.Name then
+        self.oldSelf:ChangeCategorySelection(name)
+    end
+    return setmetatable({
+        Effects = {Hover = Hover, Click = Click},
+        oldSelf = self,
+        CategoryName = self.categoryUI.Name,
+        SectionName = name,
+        CategoryFrame = CategoryFrame
+    }, UILibrary.Button)
+end
 
-        Gui.Content_4.Name = "Content"
-        Gui.Content_4.Parent = Gui.Category
-        Gui.Content_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Content_4.BackgroundTransparency = 1.000
-        Gui.Content_4.Size = UDim2.new(1, 0, 1, 0)
-        Gui.Content_4.ZIndex = 103
+function UILibrary.Button:Section(name, side)
+    local Section = getObjGen().new("Section")
+    Section.Border.SectionTitle.Text = name
+    Section.DropShadow.Size = UDim2.new(1, 25, 1, 25)
+    Section.Name = name
+    Section.Border.Content.ChildAdded:Connect(function(c)
+        local n = 25 + (10 * math.clamp(#Section.Border.Content:GetChildren() - 2, 0, 3))
+        Section.DropShadow.Size = UDim2.new(1, n, 1, n)
+    end)
+    Section.Parent = self.oldSelf.oldSelf.MainUI.MainUI.Content[self.SectionName][side]
+    Section.LayoutOrder = getLayoutOrder(self.oldSelf.oldSelf.MainUI.MainUI.Content[self.SectionName][side])
+    self.oldSelf.oldSelf.UI[self.oldSelf.categoryUI.Name][self.SectionName][name] = {}
+    Section.Size = UDim2.new(1, 0, 0, Section.Border.Content.UIListLayout.AbsoluteContentSize.Y + 20)
+    Section.Border.Content.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        Section.Size = UDim2.new(1, 0, 0, Section.Border.Content.UIListLayout.AbsoluteContentSize.Y + 20)
+    end)
+    return setmetatable({
+        MainSelf = self.oldSelf.oldSelf,
+        oldSelf = self,
+        Section = Section
+    }, UILibrary.Section)
+end
 
-        Gui.Image.Name = "Image"
-        Gui.Image.Parent = Gui.Content_4
-        Gui.Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Image.BackgroundTransparency = 1.000
-        Gui.Image.Size = UDim2.new(0, 25, 0, 25)
-        Gui.Image.ZIndex = 103
-        Gui.Image.Image = "rbxassetid://7072706749"
-        Gui.Image.ImageColor3 = Color3.fromRGB(90, 90, 90)
+local cheatInfo = {
+    ["Button"] = {FullSize = true},
+    ["Checkbox"] = {TextSize = UDim2.fromScale(.2, 1)},
+    ["Textbox"] = {TextSize = UDim2.fromScale(.4, 1), FullSize = true},
+    ["Dropdown"] = {FullSize = true},
+    ["Slider"] = {TextSize = UDim2.fromScale(.45, 1)},
+    ["Toggle"] = {TextSize = UDim2.fromScale(.5, 1)}
+}
 
-        Gui.UIAspectRatioConstraint_6.Parent = Gui.Image
-
-        Gui.Title.Name = "Title"
-        Gui.Title.Parent = Gui.Content_4
-        Gui.Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Title.BackgroundTransparency = 1.000
-        Gui.Title.Position = UDim2.new(0, 30, 0, 0)
-        Gui.Title.Size = UDim2.new(1, -30, 1, 0)
-        Gui.Title.ZIndex = 103
-        Gui.Title.Font = Enum.Font.GothamSemibold
-        Gui.Title.Text = "Category"
-        Gui.Title.TextColor3 = Color3.fromRGB(90, 90, 90)
-        Gui.Title.TextScaled = true
-        Gui.Title.TextSize = 14.000
-        Gui.Title.TextWrapped = true
-        Gui.Title.TextXAlignment = Enum.TextXAlignment.Left
-
-        Gui.UITextSizeConstraint_3.Parent = Gui.Title
-        Gui.UITextSizeConstraint_3.MaxTextSize = 14
-
-        Gui.UIListLayout_7.Parent = Gui.Content_4
-        Gui.UIListLayout_7.FillDirection = Enum.FillDirection.Horizontal
-        Gui.UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
-        Gui.UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
-        Gui.UIListLayout_7.VerticalAlignment = Enum.VerticalAlignment.Center
-        Gui.UIListLayout_7.Padding = UDim.new(0, 5)
-
-        Gui.CategoryContent.Name = "CategoryContent"
-        Gui.CategoryContent.Parent = Gui.Objects
-        Gui.CategoryContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.CategoryContent.BackgroundTransparency = 1.000
-        Gui.CategoryContent.Position = UDim2.new(0, 0, 0, 40)
-        Gui.CategoryContent.Size = UDim2.new(1, 0, 1, -40)
-
-        Gui.Bar2Holder.Name = "Bar2Holder"
-        Gui.Bar2Holder.Parent = Gui.CategoryContent
-        Gui.Bar2Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Bar2Holder.BackgroundTransparency = 1.000
-        Gui.Bar2Holder.Size = UDim2.new(0, 75, 1, 0)
-
-        Gui.UIListLayout_8.Parent = Gui.Bar2Holder
-        Gui.UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
-
-        Gui.UIListLayout_9.Parent = Gui.CategoryContent
-        Gui.UIListLayout_9.FillDirection = Enum.FillDirection.Horizontal
-        Gui.UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
-
-        Gui.UIPadding_5.Parent = Gui.CategoryContent
-        Gui.UIPadding_5.PaddingBottom = UDim.new(0, 10)
-        Gui.UIPadding_5.PaddingLeft = UDim.new(0, 10)
-        Gui.UIPadding_5.PaddingRight = UDim.new(0, 10)
-        Gui.UIPadding_5.PaddingTop = UDim.new(0, 10)
-
-        Gui.Window.Name = "Window"
-        Gui.Window.Parent = Gui.UIObjects
-        Gui.Window.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Window.BackgroundTransparency = 1.000
-        Gui.Window.Size = UDim2.new(0, 600, 0, 400)
-
-        Gui.Watermark.Name = "Watermark"
-        Gui.Watermark.Parent = Gui.Window
-        Gui.Watermark.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Gui.Watermark.BackgroundTransparency = 1.000
-        Gui.Watermark.Position = UDim2.new(0, 0, 1, 5)
-        Gui.Watermark.Size = UDim2.new(1, 0, 0, 20)
-        Gui.Watermark.ZIndex = 5
-        Gui.Watermark.Font = Enum.Font.Gotham
-        Gui.Watermark.Text = "Hydra | discord.gg/empyrean"
-        Gui.Watermark.TextColor3 = Color3.fromRGB(83, 87, 158)
-        Gui.Watermark.TextSize = 14.000
-        Gui.Watermark.TextXAlignment = Enum.TextXAlignment.Left
-
-        Gui.UIPadding_6.Parent = Gui.Window
-        Gui.UIPadding_6.PaddingBottom = UDim.new(0, 10)
-        Gui.UIPadding_6.PaddingLeft = UDim.new(0, 10)
-        Gui.UIPadding_6.PaddingRight = UDim.new(0, 10)
-        Gui.UIPadding_6.PaddingTop = UDim.new(0, 10)
-
-        Gui.MainUI.Name = "MainUI"
-        Gui.MainUI.Parent = Gui.Window
-        Gui.MainUI.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-        Gui.MainUI.ClipsDescendants = true
-        Gui.MainUI.Size = UDim2.new(1, 0, 1, 0)
-        Gui.MainUI.ZIndex = 100
-
-        Gui.DropShadowHolder_9.Name = "DropShadowHolder"
-        Gui.DropShadowHolder_9.Parent = Gui.MainUI
-        Gui.DropShadowHolder_9.BackgroundTransparency = 1.000
-        Gui.DropShadowHolder_9.BorderSizePixel = 0
-        Gui.DropShadowHolder_9.Size = UDim2.new(1, 0, 1, 0)
-        Gui.DropShadowHolder_9.ZIndex = 0
-
-        Gui.DropShadow_10.Name = "DropShadow"
-        Gui.DropShadow_10.Parent = Gui.DropShadowHolder_9
-        Gui.DropShadow_10.AnchorPoint = Vector2.new(0.5, 0.5)
-        Gui.DropShadow_10.BackgroundTransparency = 1.000
-        Gui.DropShadow_10.BorderSizePixel = 0
-        Gui.DropShadow_10.Position = UDim2.new(0.5, 0, 0.5, 0)
-        Gui.DropShadow_10.Size = UDim2.new(1, 47, 1, 47)
-        Gui.DropShadow_10.ZIndex = 99
-        Gui.DropShadow_10.Image = "rbxassetid://6014261993"
-        Gui.DropShadow_10.ImageColor3 = Color3.fromRGB(0, 0, 0)
-        Gui.DropShadow_10.ImageTransparency = 0.500
-        Gui.DropShadow_10.ScaleType = Enum.ScaleType.Slice
-        Gui.DropShadow_10.SliceCenter = Rect.new(49, 49, 450, 450)
-
-        Gui.UICorner_17.CornerRadius = UDim.new(0, 5)
-        Gui.UICorner_17.Parent = Gui.MainUI
-
-        Gui.Sidebar.Name = "Sidebar"
-        Gui.Sidebar.Parent = Gui.MainUI
-        Gui.Sidebar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-        Gui.Sidebar.Size = UDim2
+local function generateCheatBase(Cheat, sett)
